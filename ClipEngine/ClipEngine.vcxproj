@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Library|Win32">
+      <Configuration>Library</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Library|x64">
+      <Configuration>Library</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E2B346EC-7475-437E-9F19-2AF7D92D8EB7}</ProjectGuid>
+    <RootNamespace>ClipEngine</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Library|Win32'">
+    <PlatformToolset>v140</PlatformToolset>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Library|x64'">
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Library|Win32'">
+    <Linkage-sfml-window>static</Linkage-sfml-window>
+    <Linkage-sfml-system>static</Linkage-sfml-system>
+    <Allegro_AddonImage>true</Allegro_AddonImage>
+    <Allegro_AddonTTF>true</Allegro_AddonTTF>
+    <Allegro_AddonPrimitives>true</Allegro_AddonPrimitives>
+    <Allegro_AddonAudio>true</Allegro_AddonAudio>
+    <Allegro_AddonAcodec>true</Allegro_AddonAcodec>
+    <Allegro_AddonPhysfs>true</Allegro_AddonPhysfs>
+    <Allegro_AddonDialog>true</Allegro_AddonDialog>
+    <Allegro_AddonMemfile>true</Allegro_AddonMemfile>
+    <Allegro_AddonFont>true</Allegro_AddonFont>
+    <Allegro_AddonColor>true</Allegro_AddonColor>
+    <Allegro_AddonVideo>true</Allegro_AddonVideo>
+    <Allegro_LibraryType>StaticMonolithRelease</Allegro_LibraryType>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <SourcePath>$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Library|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>deps;deps\include;deps\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NOMINMAX;SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Lib>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="deps\include\Animation.h" />
+    <ClInclude Include="deps\include\Asset.h" />
+    <ClInclude Include="deps\include\BaseComponent.h" />
+    <ClInclude Include="deps\include\Clip.h" />
+    <ClInclude Include="deps\include\Collision2D.h" />
+    <ClInclude Include="deps\include\Collision2DGrid.h" />
+    <ClInclude Include="deps\include\Collision2DQuadTree.h" />
+    <ClInclude Include="deps\include\Component.h" />
+    <ClInclude Include="deps\include\Controller.h" />
+    <ClInclude Include="deps\include\FileData.h" />
+    <ClInclude Include="deps\include\Draw.h" />
+    <ClInclude Include="deps\include\DrawBatch.h" />
+    <ClInclude Include="deps\include\Frame.h" />
+    <ClInclude Include="deps\include\Framerate.h" />
+    <ClInclude Include="deps\include\IContainer.h" />
+    <ClInclude Include="deps\include\Input.h" />
+    <ClInclude Include="deps\include\IPlayable.h" />
+    <ClInclude Include="deps\include\Message.h" />
+    <ClInclude Include="deps\include\Misc.h" />
+    <ClInclude Include="deps\include\ClipEngine.h" />
+    <ClInclude Include="deps\include\Player.h" />
+    <ClInclude Include="deps\include\Sequence.h" />
+    <ClInclude Include="deps\include\Sound.h" />
+    <ClInclude Include="deps\include\SpriteFX.h" />
+    <ClInclude Include="deps\include\Tween.h" />
+    <ClInclude Include="deps\include\Window.h" />
+    <ClInclude Include="deps\include\World2D.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="deps\include\Misc.inl" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="deps\src\Animation.cpp" />
+    <ClCompile Include="deps\src\Asset.cpp" />
+    <ClCompile Include="deps\src\BaseComponent.cpp" />
+    <ClCompile Include="deps\src\Clip.cpp" />
+    <ClCompile Include="deps\src\Collision2D.cpp" />
+    <ClCompile Include="deps\src\Collision2DGrid.cpp" />
+    <ClCompile Include="deps\src\Component.cpp" />
+    <ClCompile Include="deps\src\Controller.cpp" />
+    <ClCompile Include="deps\src\FileData.cpp" />
+    <ClCompile Include="deps\src\Draw.cpp" />
+    <ClCompile Include="deps\src\DrawBatch.cpp" />
+    <ClCompile Include="deps\src\Framerate.cpp" />
+    <ClCompile Include="deps\src\Misc.cpp" />
+    <ClCompile Include="deps\src\ClipEngine.cpp" />
+    <ClCompile Include="deps\src\Player.cpp" />
+    <ClCompile Include="deps\src\Sequence.cpp" />
+    <ClCompile Include="deps\src\SpriteFX.cpp" />
+    <ClCompile Include="deps\src\Tween.cpp" />
+    <ClCompile Include="deps\src\Window.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\AllegroDeps.1.5.0.0\build\native\AllegroDeps.targets" Condition="Exists('..\packages\AllegroDeps.1.5.0.0\build\native\AllegroDeps.targets')" />
+    <Import Project="..\packages\Allegro.5.2.2.0\build\native\Allegro.targets" Condition="Exists('..\packages\Allegro.5.2.2.0\build\native\Allegro.targets')" />
+    <Import Project="..\packages\lua.redist.5.3.3\build\native\lua.redist.targets" Condition="Exists('..\packages\lua.redist.5.3.3\build\native\lua.redist.targets')" />
+    <Import Project="..\packages\lua.5.3.3\build\native\lua.targets" Condition="Exists('..\packages\lua.5.3.3\build\native\lua.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\AllegroDeps.1.5.0.0\build\native\AllegroDeps.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\AllegroDeps.1.5.0.0\build\native\AllegroDeps.targets'))" />
+    <Error Condition="!Exists('..\packages\Allegro.5.2.2.0\build\native\Allegro.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Allegro.5.2.2.0\build\native\Allegro.targets'))" />
+    <Error Condition="!Exists('..\packages\lua.redist.5.3.3\build\native\lua.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\lua.redist.5.3.3\build\native\lua.redist.targets'))" />
+    <Error Condition="!Exists('..\packages\lua.5.3.3\build\native\lua.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\lua.5.3.3\build\native\lua.targets'))" />
+  </Target>
+</Project>
